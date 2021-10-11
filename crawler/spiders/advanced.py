@@ -15,11 +15,11 @@ from scrapy.http.request import Request
 class AdvancedSpider(BaseSpider):
     name = 'advanced'
     custom_settings = {"DEFAULT_REQUEST_HEADERS": TWITTER_DEFAULT_HEADER}
-    config_path = 'config/advanced_config.json'
+    config_path = 'advanced_config.json'
 
     def start_requests(self):
         try:
-            js = json.load(open(self.config_path, 'r', encoding='utf-8'))
+            js = json.load(open('config/' + self.config_path, 'r', encoding='utf-8'))
             q_list = FormatUtil.q_format(js)
             for q_ in q_list:
                 yield Request(ADVANCED_URL.format(parse.quote(q_),''), meta={'q': q_})

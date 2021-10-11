@@ -11,8 +11,8 @@
     "min_reply" : 0,
     "min_like" : 0,
     "min_retweet" : 0,
-    "until" : "2021-09-30",
-    "since" : "2019-01-01",
+    "until" : "",
+    "since" : "",
 
     "step" : ""
 }
