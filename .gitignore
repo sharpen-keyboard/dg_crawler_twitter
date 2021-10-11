@@ -139,4 +139,4 @@ logs/
 *.pyc
 test.*
 *.xls
-*out*.json
+*.json
