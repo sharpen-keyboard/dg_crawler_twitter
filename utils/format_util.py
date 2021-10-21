@@ -32,8 +32,8 @@ class FormatUtil:
         if not kwargs.get('step'):
             yield q + since_until(kwargs.get('since'), kwargs.get('until'))
         else:
-            since_p = DateUtil.formate_time2time_stamp(kwargs.get('since', '2006-01-01'))
-            until_p = DateUtil.formate_time2time_stamp(kwargs.get('until', DateUtil.time_now_formate().split(' ')[0]))
+            since_p = DateUtil.formate_time2time_stamp(kwargs['since'] if kwargs.get('since') else '2006-01-01')
+            until_p = DateUtil.formate_time2time_stamp(kwargs['until'] if kwargs.get('until') else DateUtil.time_now_formate().split(' ')[0])
             step = FormatUtil.step_format(kwargs['step'])
             while(since_p < until_p):
                 next = since_p + step

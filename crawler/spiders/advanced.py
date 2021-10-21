@@ -20,9 +20,10 @@ class AdvancedSpider(BaseSpider):
     def start_requests(self):
         try:
             js = json.load(open('config/' + self.config, 'r', encoding='utf-8'))
-            q_list = FormatUtil.q_format(js)
-            for q_ in q_list:
-                yield Request(ADVANCED_URL.format(parse.quote(q_),''), meta={'q': q_})
+            for config_list in js:
+                q_list = FormatUtil.q_format(config_list)
+                for q_ in q_list:
+                    yield Request(ADVANCED_URL.format(parse.quote(q_),''), meta={'q': q_})
         except Exception as e:
             self.send_log(3, "start_requests出错 ==> {}".format(e))
 
