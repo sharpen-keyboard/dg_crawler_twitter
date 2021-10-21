@@ -24,7 +24,7 @@ default_config = {
 word_list = [["COVID-19","COVID","COVID19","Covid19"],"Delta variant","pandemic","epidemic","vaccine","Virus","Coronavirus","biolab","medical supplies","outbreak","Wuhan"]
 from_ = ["ChineseEmbinUK"]
 until = ""
-since = ""
+since = "2019-10-01"
 step = "month"
 
 def run(file_name):
