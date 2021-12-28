@@ -19,7 +19,7 @@ class FormatUtil:
         q = ''
         for i in kwargs.get('words', []):
             if isinstance(i, str):
-                q += '"{}" '.format(i)
+                q += '{} '.format(i)
             elif isinstance(i, list):
                 q += '({}) '.format(' OR '.join(['"{}"'.format(j) for j in i]))
                 
